@@ -1,28 +1,28 @@
 ---
 title: Home
-heroTitle: Performance textiles, manufactured at scale
-heroSubtitle: Dynamic Fabric supplies woven and knitted fabrics to apparel brands, distributors, and industrial buyers — with consistent quality, transparent pricing, and on-time delivery.
+heroTitle: Knitted fabrics, manufactured in Surat
+heroSubtitle: Dynamic Knitfabs Pvt Ltd is a vertically integrated textile mill manufacturing and wholesaling knitted fabrics for garment makers, brands, and fabric traders across India.
 ctaLabel: Request a quote
 ctaLink: /contact/
 features:
-  - title: Vertically integrated
-    text: From yarn sourcing to finishing, every stage runs in-house — giving you tighter quality control and shorter lead times.
-  - title: Wholesale-first pricing
-    text: Volume-based price tiers with no hidden costs. MOQs designed for both established brands and growing labels.
-  - title: Certified quality
-    text: OEKO-TEX and ISO 9001 certified processes, with lab reports available for every production lot.
+  - title: Textile mill & manufacturer
+    text: In-house knitting and fabric production at our Surat unit gives you consistent quality and direct mill pricing without middlemen.
+  - title: Wholesale supply
+    text: Volume supply for garment manufacturers, brands, and fabric stores, with flexible order quantities for growing businesses.
+  - title: Pan-India reach
+    text: Registered in Delhi's Nai Sarak textile trade hub with operations in Noida and manufacturing in Surat — we serve buyers nationwide.
 stats:
-  - value: "25+"
-    label: Years in business
-  - value: "1.2M"
-    label: Metres produced monthly
-  - value: "300+"
-    label: B2B clients worldwide
-  - value: "98%"
-    label: On-time delivery rate
+  - value: "2020"
+    label: Established
+  - value: "3"
+    label: Locations (Delhi · Noida · Surat)
+  - value: "4.5★"
+    label: Buyer rating
+  - value: "100%"
+    label: In-house production
 ---
-## Why brands choose Dynamic Fabric
+## Why buyers choose Dynamic Knitfabs
 
-We act as a manufacturing partner, not just a supplier. Our merchandising team works with your designers on fabric development, our QA team inspects every lot before dispatch, and our logistics desk handles documentation for export orders.
+We are a manufacturer first: fabric is knitted, processed, and inspected at our own Surat facility, so you deal directly with the mill. Whether you need stock fabrics for immediate dispatch or a custom production run, our team quotes quickly and delivers on schedule.
 
-Whether you need 500 metres for a sample run or 50,000 metres for a season programme, we deliver the same fabric, the same hand-feel, the same shade — every time.
+Send us your requirement — fabric type, quantity, and timeline — and we'll respond within one business day.

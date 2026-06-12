@@ -1,19 +1,19 @@
 ---
-title: About Dynamic Fabric
-intro: A family-run textile manufacturer that grew into a global B2B supplier — without losing its obsession with quality.
+title: About Dynamic Knitfabs
+intro: A vertically integrated textile company manufacturing and wholesaling knitted fabrics from Surat, Gujarat.
 ---
-## Our story
+## Who we are
 
-Dynamic Fabric started as a two-loom workshop and has grown into a vertically integrated mill producing over a million metres of fabric every month. We serve apparel brands, garment exporters, uniform programmes, and industrial buyers across more than 20 countries.
+Dynamic Knitfabs Private Limited was incorporated on 1 August 2020 (CIN U17299DL2020PTC367257, ROC Delhi) and has grown into a trusted name in knitted fabric manufacturing and wholesale. Our registered office sits in Nai Sarak, Chandni Chowk — the heart of Delhi's historic textile trade — and our manufacturing unit operates from Raghuvir Platinum, Saroli, Surat, India's largest man-made fabric hub.
 
 ## What we do
 
-We manufacture and wholesale woven and knitted fabrics: cotton and cotton blends, technical performance fabrics, and sustainable lines built on recycled and organic fibres. Our in-house dyeing and finishing units let us match shades precisely and hold them consistent across repeat orders.
+We operate as a textile mill, fabric product manufacturer, and fabric wholesaler. Our knitted fabric range serves garment manufacturers, apparel brands, uniform programmes, and fabric retailers. Production runs in-house, which means direct mill pricing, consistent quality across repeat orders, and reliable lead times.
 
-## How we work
+## Where we operate
 
-Every client gets a dedicated merchandiser as a single point of contact. Development samples ship within days, not weeks. Production lots are lab-tested before dispatch, and we share inspection reports proactively.
+Manufacturing: Raghuvir Platinum 330-331, Saroli, Surat, Gujarat 395010. Registered office: 1315-16, 2nd Floor, Vaidwara, Nai Sarak, Chandni Chowk, Delhi 110006. Business office: B-63, Sector 64, Noida, Uttar Pradesh 201301 (GSTIN 09AAHCD8796Q1ZE).
 
-## Certifications
+## Working with us
 
-Our facilities are ISO 9001 certified, and our fabrics carry OEKO-TEX Standard 100 certification. GOTS-certified organic lines are available on request.
+Every enquiry gets a direct response from our sales team within one business day. Swatches and sample yardage are available for qualified B2B buyers, and factory visits in Surat are welcome by appointment.
