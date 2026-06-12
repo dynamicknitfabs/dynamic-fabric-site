@@ -1,0 +1,17 @@
+---
+import Base from '../layouts/Base.astro';
+import { getEntry, render } from 'astro:content';
+
+const page = await getEntry('pages', 'about');
+if (!page) throw new Error('Missing pages/about.md');
+const { Content } = await render(page);
+---
+<Base title={page.data.title} description={page.data.intro}>
+  <section class="block">
+    <div class="container prose">
+      <h1>{page.data.title}</h1>
+      {page.data.intro && <p style="font-size:1.15rem;color:var(--muted);margin-top:0.75rem;">{page.data.intro}</p>}
+      <Content />
+    </div>
+  </section>
+</Base>

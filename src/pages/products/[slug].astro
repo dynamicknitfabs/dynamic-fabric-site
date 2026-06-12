@@ -1,0 +1,32 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const products = await getCollection('products');
+  return products.map((p) => ({ params: { slug: p.id }, props: { product: p } }));
+}
+
+const { product } = Astro.props;
+const { Content } = await render(product);
+---
+<Base title={product.data.title} description={product.data.description}>
+  <section class="block">
+    <div class="container prose">
+      <h1>{product.data.title}</h1>
+      <p style="font-size:1.15rem;color:var(--muted);margin-top:0.75rem;">{product.data.description}</p>
+      {product.data.image && <img src={product.data.image} alt={product.data.title} style="margin-top:1.5rem;" />}
+      {product.data.specs && product.data.specs.length > 0 && (
+        <table class="specs">
+          <tbody>
+            {product.data.specs.map((s) => (
+              <tr><td>{s.name}</td><td>{s.value}</td></tr>
+            ))}
+          </tbody>
+        </table>
+      )}
+      <Content />
+      <a class="btn" href="/contact/">Request a quote</a>
+    </div>
+  </section>
+</Base>

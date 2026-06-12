@@ -1,0 +1,23 @@
+---
+import Base from '../layouts/Base.astro';
+import { getEntry, render } from 'astro:content';
+
+const page = await getEntry('pages', 'contact');
+if (!page) throw new Error('Missing pages/contact.md');
+const { Content } = await render(page);
+---
+<Base title={page.data.title} description={page.data.intro}>
+  <section class="block">
+    <div class="container prose">
+      <h1>{page.data.title}</h1>
+      {page.data.intro && <p style="font-size:1.15rem;color:var(--muted);margin-top:0.75rem;">{page.data.intro}</p>}
+      <ul class="contact-info">
+        {page.data.email && <li><strong>Email</strong> <a href={`mailto:${page.data.email}`}>{page.data.email}</a></li>}
+        {page.data.phone && <li><strong>Phone</strong> <a href={`tel:${page.data.phone.replace(/\s/g, '')}`}>{page.data.phone}</a></li>}
+        {page.data.address && <li><strong>Address</strong> {page.data.address}</li>}
+      </ul>
+      <Content />
+      {page.data.email && <a class="btn" href={`mailto:${page.data.email}?subject=Inquiry%20from%20website`}>Send an inquiry</a>}
+    </div>
+  </section>
+</Base>

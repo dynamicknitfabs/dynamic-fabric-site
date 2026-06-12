@@ -1,0 +1,24 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const products = (await getCollection('products')).sort(
+  (a, b) => a.data.order - b.data.order
+);
+---
+<Base title="Products" description="Wholesale textile product range from Dynamic Fabric.">
+  <section class="block">
+    <div class="container">
+      <h1 class="section-title">Products</h1>
+      <div class="grid">
+        {products.map((p) => (
+          <a class="card" href={`/products/${p.id}/`} style="display:block;">
+            {p.data.image && <img src={p.data.image} alt={p.data.title} />}
+            <h3>{p.data.title}</h3>
+            <p>{p.data.description}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

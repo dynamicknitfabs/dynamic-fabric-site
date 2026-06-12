@@ -1,0 +1,25 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+---
+<Base title="Blog" description="News and insights from Dynamic Fabric.">
+  <section class="block">
+    <div class="container">
+      <h1 class="section-title">Blog</h1>
+      <div class="grid">
+        {posts.map((p) => (
+          <a class="card" href={`/blog/${p.id}/`} style="display:block;">
+            {p.data.image && <img src={p.data.image} alt={p.data.title} />}
+            <div class="meta">{p.data.date.toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' })}</div>
+            <h3>{p.data.title}</h3>
+            <p>{p.data.description}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

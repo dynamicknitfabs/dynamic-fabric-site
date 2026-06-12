@@ -1,0 +1,55 @@
+---
+import settings from '../data/settings.json';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+const { title, description } = Astro.props;
+const pageTitle = title ? `${title} — ${settings.siteName}` : `${settings.siteName} — ${settings.tagline}`;
+const current = Astro.url.pathname;
+const links = [
+  { href: '/', label: 'Home' },
+  { href: '/products/', label: 'Products' },
+  { href: '/about/', label: 'About' },
+  { href: '/blog/', label: 'Blog' },
+  { href: '/contact/', label: 'Contact' },
+];
+const isCurrent = (href: string) =>
+  href === '/' ? current === '/' : current.startsWith(href);
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    {description && <meta name="description" content={description} />}
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <header class="site">
+      <div class="container">
+        <a class="logo" href="/">Dynamic<span>Fabric</span></a>
+        <nav class="main">
+          {links.map((l) => (
+            <a href={l.href} aria-current={isCurrent(l.href) ? 'page' : undefined}>{l.label}</a>
+          ))}
+        </nav>
+      </div>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="site">
+      <div class="container">
+        <p>{settings.footerText}</p>
+        <p style="margin-top: 0.75rem;">
+          {settings.email} · {settings.phone} · {settings.address}
+        </p>
+        <p style="margin-top: 0.75rem;">© {new Date().getFullYear()} {settings.siteName}. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

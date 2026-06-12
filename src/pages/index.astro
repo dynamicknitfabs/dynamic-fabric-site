@@ -1,0 +1,94 @@
+---
+import Base from '../layouts/Base.astro';
+import { getEntry, getCollection, render } from 'astro:content';
+
+const home = await getEntry('pages', 'home');
+if (!home) throw new Error('Missing pages/home.md');
+const { Content } = await render(home);
+
+const products = (await getCollection('products', (p) => p.data.featured))
+  .sort((a, b) => a.data.order - b.data.order)
+  .slice(0, 3);
+const posts = (await getCollection('blog'))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+---
+<Base description={home.data.heroSubtitle}>
+  <div class="hero">
+    <div class="container">
+      <h1>{home.data.heroTitle}</h1>
+      <p>{home.data.heroSubtitle}</p>
+      {home.data.ctaLabel && <a class="btn" href={home.data.ctaLink ?? '/contact/'}>{home.data.ctaLabel}</a>}
+    </div>
+  </div>
+
+  {home.data.features && (
+    <section class="block">
+      <div class="container">
+        <div class="grid">
+          {home.data.features.map((f) => (
+            <div class="card">
+              <h3>{f.title}</h3>
+              <p>{f.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {home.data.stats && (
+    <section class="block alt">
+      <div class="container">
+        <div class="stats">
+          {home.data.stats.map((s) => (
+            <div>
+              <div class="value">{s.value}</div>
+              <div class="label">{s.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {products.length > 0 && (
+    <section class="block">
+      <div class="container">
+        <h2 class="section-title">Featured products</h2>
+        <div class="grid">
+          {products.map((p) => (
+            <a class="card" href={`/products/${p.id}/`} style="display:block;">
+              {p.data.image && <img src={p.data.image} alt={p.data.title} />}
+              <h3>{p.data.title}</h3>
+              <p>{p.data.description}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="block alt">
+    <div class="container prose">
+      <Content />
+    </div>
+  </section>
+
+  {posts.length > 0 && (
+    <section class="block">
+      <div class="container">
+        <h2 class="section-title">Latest from the blog</h2>
+        <div class="grid">
+          {posts.map((p) => (
+            <a class="card" href={`/blog/${p.id}/`} style="display:block;">
+              <div class="meta">{p.data.date.toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' })}</div>
+              <h3>{p.data.title}</h3>
+              <p>{p.data.description}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+</Base>
